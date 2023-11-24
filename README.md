@@ -6,8 +6,9 @@ It hopefully will continuously get updated, so I can keep adding small options t
 
 ## How is it organised ? 
 
-- *The main program*'s path is ```\my-app\src\app```
-- *The pictures* used are into ```\my-app\public```
+- *The main program*'s path is ```\src\app```
+- *The pictures* used are into ```\public```
+- *The component* is located in ```\src\components```
 - *The file* ```.eslintrc.json``` is my code formatter
 
 ## How does it work ? 
