@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Arial Rounded MT';
+    src: url('/public/transfonter.org-20231124-213955/ArialRoundedMTBold.woff2') format('woff2'),
+        url('/public/transfonter.org-20231124-213955/ArialRoundedMTBold.woff2') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
