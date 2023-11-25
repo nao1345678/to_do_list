@@ -23,8 +23,7 @@ const Task = ({ index, name, isChecked, handleCheck }: taskProps) => {
           <div className="oskour">
             {isChecked ? (
               <div className="POPO">
-                <div className="checkbox"></div>
-                <div className="tick"></div>
+                <div className="checkbox_checked"></div>
               </div>
             ) : (
               <div className="checkbox"></div>
