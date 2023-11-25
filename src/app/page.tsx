@@ -72,7 +72,7 @@ export default function Home() {
           Add
         </button>
 
-        <h1 className="categories_prefaites">EN COURS</h1>
+        <h1 className="categories_prefaites">ONGOING</h1>
         {uncheckedTasks.map((task, index) => {
           return (
             <div className="task_block">
@@ -103,7 +103,7 @@ export default function Home() {
           )
         })}
 
-        <h1 className="categories_prefaites">TERMINÉES</h1>
+        <h1 className="categories_prefaites">DONE</h1>
         {checkedTasks.map((task, index) => {
           return (
             <div className="task_block">
