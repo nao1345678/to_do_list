@@ -5,16 +5,22 @@ import { EndOfLineState } from 'typescript'
 import Task from '@/components/Task'
 
 export default function Home() {
-  const [isAllChecked, setisAllChecked] = useState(false)
-
   const [isModified, setIsModified] = useState(false)
 
-  const isAllCheckedButton = () => {
-    setisAllChecked(!isAllChecked)
+  const [Empty, setEmpty] = useState(false)
+
+  const isEmpty = () => {
+    if (tasks.length === 0) {
+      setEmpty(true)
+    }
   }
 
   const handleCheckboxChange = (index: number) => {
     setTasks(tasks.map((task) => (task.id === index ? { ...task, isChecked: !task.isChecked } : task)))
+  }
+
+  const handleAllCheckboxChange = () => {
+    setTasks(tasks.map((task) => (task.isChecked ? task : { ...task, isChecked: !task.isChecked })))
   }
 
   const [tasks, setTasks] = useState([
@@ -33,6 +39,10 @@ export default function Home() {
     const updatedTasks = [...tasks]
     updatedTasks.splice(index, 1)
     setTasks(updatedTasks)
+  }
+
+  const removeAllItems = () => {
+    setTasks([])
   }
 
   const [inputTask, setinputTask] = useState('')
@@ -72,6 +82,8 @@ export default function Home() {
           Add
         </button>
 
+        {/* <h1 className="message_vide">{isEmpty ? 'No task ... (╥﹏╥)' : ''}</h1> */}
+
         <h1 className="categories_prefaites">ONGOING</h1>
         {uncheckedTasks.map((task, index) => {
           return (
@@ -107,12 +119,14 @@ export default function Home() {
         {checkedTasks.map((task, index) => {
           return (
             <div className="task_block">
-              <Task
-                index={task.id}
-                name={task.name}
-                isChecked={true}
-                handleCheck={() => handleCheckboxChange(task.id)}
-              />
+              <div className="donetaskname">
+                <Task
+                  index={task.id}
+                  name={task.name}
+                  isChecked={true}
+                  handleCheck={() => handleCheckboxChange(task.id)}
+                />
+              </div>
 
               <button className="boutons" onClick={() => removeItem(index)}>
                 <img src="bin.svg" alt="" />
@@ -120,6 +134,14 @@ export default function Home() {
             </div>
           )
         })}
+
+        <button className="alldonebutton" onClick={() => handleAllCheckboxChange()}>
+          All done
+        </button>
+
+        <button className="deleteallbutton" onClick={() => removeAllItems()}>
+          Delete all
+        </button>
       </div>
     </div>
   )
