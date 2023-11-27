@@ -41,13 +41,37 @@ body {
   border-radius: 15px;
   border: 1px solid #cc89dd;
   background: #e9aaff;
-  box-shadow: 0px 6px 89px 0px rgba(113, 52, 150, 0.38);
+  box-shadow: 0px 6px 20px 0px rgba(113, 52, 150, 0.38);
 }
 
 #todo {
   margin-left: 8rem;
 }
 
+.alldonebutton,
+.deleteallbutton {
+  width: 100px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  font-family: 'Arial Rounded MT', sans-serif;
+  background: #a23ddf;
+  border: 1px solid #9200d7;
+  font-family: Arial;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  color: #fff;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.deleteallbutton {
+  background-color: rgb(249, 37, 168);
+  border: 1px solid rgb(224, 21, 146);
+}
 .TodoList {
   margin-top: 50px;
   margin-bottom: 60px;
@@ -137,10 +161,9 @@ body {
   border-radius: 10px;
   border: 1px solid #9200d7;
   background: #fff;
-  box-shadow: 0px 4px 45px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 10px 0px rgba(187, 99, 216, 0.85);
   display: flex;
-  justify-content: space-around; /* Ajustez cette propriété selon votre besoin (space-between, center, etc.) */
-  align-items: flex;
+  justify-content: space-around;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -182,9 +205,16 @@ form .task_block {
 }
 
 .buttonadd:hover,
-.buttonadd.focus {
+.buttonadd.focus,
+.alldonebutton:hover,
+.alldonebutton.focus {
   animation: pulse 300ms;
   box-shadow: 0px 4px 10px 0px rgba(216, 98, 255, 0.85);
+}
+
+.deleteallbutton:hover {
+  animation: pulse 300ms;
+  box-shadow: 0px 4px 10px 0px rgba(219, 45, 115, 0.673);
 }
 
 @keyframes pulse {
@@ -193,12 +223,18 @@ form .task_block {
   }
 }
 
+.task_block:hover {
+  box-shadow: 0px 4px 45px 0px rgba(53, 7, 63, 0.25);
+}
+
 .checkbox:hover {
   background: #ffa9f6;
+  transform: scale(1.1);
 }
 
 .checkbox_checked:hover {
   background-color: #c66fe5;
+  transform: scale(1.1);
 }
 
 .checkbox_checked {
@@ -212,4 +248,12 @@ form .task_block {
   -webkit-transition: background 150ms ease;
   transition: background 150ms ease;
   background-color: #9200d7;
+}
+
+.navbaradd:hover {
+  box-shadow: 0px 4px 10px 0px rgba(187, 99, 216, 0.85);
+}
+
+.donetaskname {
+  text-decoration: line-through;
 }
